@@ -1,4 +1,4 @@
-var timer = 2;
+var timer = 60;
 var score = 0;
 var hit=0;//here it is declared first so that we can use it in addeventlistener bcoz if defined in function var is function scope
 isGameOver = false
