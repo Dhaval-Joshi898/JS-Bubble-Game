@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: "Gilroy";
+}
+
+html,body{
+    height: 100%;
+    width:100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(140, 191, 140);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#panel{
+    width: 80%;
+    height:80%;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden; /*the border were not there they were out of box with using this they are inside*/
+
+}
+#paneltop{
+    padding: 0px 30%;    /*left and right padding to make it in more center all hit score and timer */
+    width: 100%;  /*this will take 100% of pits parent panel i.e 100% of full 80%(panel parent)*/
+    height: 100px;
+    background-color: rgb(55, 96, 43);
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+.box{
+    padding: 10px 20px;  /* padding inside the box to make it like a box*/
+    background-color: white;
+    border-radius: 5px;
+    color:rgb(15, 131, 17);
+    font-size: 19px;
+    font-weight: 600;
+    
+}
+.elem{
+    display: flex;
+    align-items: center; /*if not this then when number is there inside the box hit goes up this will keep it center and not move*/
+    gap: 20px;
+}
+.elem h3{
+    font-size: 22px;
+    font-weight: 500;
+}
+#panelbottom{
+    width:100%;
+    height:100%;
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px; /*gap between bubbles*/
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.bubble{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(72, 104, 72);
+    border-radius: 50%;
+    /*the below is for number to be at center of the bubble*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    
+}
+.bubble:hover{
+    background-color: rgb(24, 72, 24);
+    cursor:pointer;
+}
+
+#gover{
+    margin-bottom: 10%;
+}
