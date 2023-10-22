@@ -1,11 +1,15 @@
-var timer = 60;
+var timer = 2;
 var score = 0;
 var hit=0;//here it is declared first so that we can use it in addeventlistener bcoz if defined in function var is function scope
+isGameOver = false
 
 function makeBubble() {
+    if (isGameOver) {
+        return; // Don't create new bubbles if the game is over
+    }
     var clutter = ''
 
-    for (var i = 1; i <= 168; i++) {
+    for (var i = 1; i <= 176;i++) {
         number = Math.floor(Math.random() * 10)
         clutter += `<div class="bubble">${number}</div>`
     }
@@ -21,25 +25,20 @@ function runTimer() {
             document.querySelector('#divtimer').textContent = timer
         }
         else {
-            clearInterval(timeinterval)
-            document.querySelector('#panelbottom').innerHTML = '<h2 id=gover>Game Over</h2>'
-            document.getElementById('panelbottom').removeEventListenerEventListener('click', function (value) {
-                // var clickedNumber = Number(value.target.textContent) //this will give 4 but it is not in number form it gives STRING
-                // if(clickedNumber===hit){
-                //     increaseScore()
-                //     makeBubble()
-                //     getNewHit()
-                // }
-                // else{
-                //     makeBubble()
-                //     getNewHit()
-                // }
-            })
+            clearInterval(timeinterval);
+            document.querySelector('#panelbottom').innerHTML = '<h2 id=gover>Game Over</h2>';
+            isGameOver=true
         }
     }, 1000)
 }
 
+
+
+
 function getNewHit() {
+    if(isGameOver){
+        return
+    }
     hit = Math.floor(Math.random() * 10);
     document.getElementById('divhit').textContent = hit;
 
